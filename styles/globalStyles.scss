@@ -1,0 +1,94 @@
+html{
+	height: 100%;
+}
+.App{
+	margin: 2% 2% 0 2%;
+}
+.appTitle{
+	padding-bottom: 5px;
+	color: white;
+	font-size: 2.5rem;
+}
+body{
+	/* background-color: rgb(105, 188, 76); */
+	height: 100%;
+	background-image: linear-gradient(rgb(105, 184, 68),rgb(85, 161, 58));
+
+	.p-tabmenu{
+		.p-tabmenu-nav{
+			font-size: 1.2rem;
+			border: none;
+			.p-tabmenuitem.appLogo,.p-tabmenuitem.p-highlight.appLogo{
+				.p-menuitem-link{
+					border: none;
+					background-color: transparent;
+					// color: red;
+				}
+			}
+			.p-tabmenuitem{
+				&:not(.p-highlight):not(.p-disabled):hover{
+					.p-menuitem-link{
+						background-color: rgb(186, 218, 174);
+					}
+				}
+			}
+			.p-tabmenuitem{
+				&:not(.p-highlight):not(.p-disabled):hover{
+					.p-menuitem-link{
+						background-color: rgb(186, 218, 174);
+					}
+				}
+				
+				.p-menuitem-link{
+					&:focus{
+						box-shadow: none;
+					}
+					background-color: rgb(94, 163, 69);
+					border: 1px solid white;
+					.p-menuitem-icon{
+						color: white;
+					}
+					.p-menuitem-text{
+						color: white;
+					}
+				}
+			}
+			.p-tabmenuitem.p-highlight:not(.appLogo){
+				outline: none;
+				.p-menuitem-link{
+					background-color: white;
+					// border: 1px solid rgb(85, 161, 58);
+					border:none;
+					border-bottom: 1px solid white;
+
+					.p-menuitem-icon{
+						color: rgb(85, 161, 58);
+					}
+					.p-menuitem-text{
+						color: black;
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+
+
+// body .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link
+
+// .p-tabmenuitem.p-highlight .p-menuitem-link{
+// 	background-color: rgb(85, 161, 58);
+// }
+
+.mainContent{
+	height: 500px;
+	width: 100%;
+
+	background-color: white;
+
+	border-radius:10px 10px 10px 10px;
+
+	padding: 2% 5% 0 5%;
+}
