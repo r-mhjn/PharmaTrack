@@ -1,5 +1,6 @@
 import React from "react";
 import Axios from "axios";
+import { relative } from "path";
 
 // const alerts = [
 //   {
@@ -147,7 +148,7 @@ export default class AlertBox extends React.Component {
                   >
                     &times;
                   </span>
-                  <strong>{item.mname + " " + item.text}</strong>
+                  <strong >{item.mname + " " + item.text}</strong>
                 </div>
               );
             }
