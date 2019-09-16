@@ -16,6 +16,7 @@ import "./billlogs.scss";
 import "./stocktable.scss";
 import "./vendors.scss";
 import "./mynav.scss";
+import './prediction.scss';
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

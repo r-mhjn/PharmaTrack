@@ -194,7 +194,7 @@ export default class BillBox extends React.Component {
               index: "",
               totalcost: ""
             });
-            window.location.reload();
+            // window.location.reload();
           }
         })
         .catch(err => console.log(err));
@@ -225,6 +225,7 @@ export default class BillBox extends React.Component {
       );
       let totalcost = this.sumAllCost();
       totalcost += parseFloat(total);
+      totalcost = totalcost.toFixed(2);
       totalcost += "";
       this.setState({ totalcost });
       let newMed = {
@@ -628,7 +629,7 @@ export default class BillBox extends React.Component {
                           <span className="billListColText">{item.tax}</span>
                         </td>
                         <td className="billListTableCol">
-                          <span className="billListColText">{item.total}</span>
+                          <span className="billListColText">{item.total.toFixed(2)}</span>
                         </td>
                         <td className="billListTableCol">
                           <Button
