@@ -58,9 +58,7 @@ export default class MyNav extends React.Component {
 					styles={{ sidebar: { background: '#202d32' } }}
 				>
 					<button onClick={() => this.onSetSidebarOpen(true)}>
-						<div className={'menuIcon'}></div>
-						<div className={'menuIcon'}></div>
-						<div className={'menuIcon'}></div>
+						
 					</button>
 				</Sidebar>
 				<ul className="ul">
