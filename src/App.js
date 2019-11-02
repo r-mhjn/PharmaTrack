@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from './Login';
@@ -6,16 +5,6 @@ import BillBox from './BillBox';
 import AddStockBox from './AddStockBox';
 import BillingLogs from './BillingLogs';
 import StockTables from './StockTables';
-import Prediction from './Predection';
-=======
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import BillBox from "./BillBox";
-import AddStockBox from "./AddStockBox";
-import BillingLogs from "./BillingLogs";
-import StockTables from "./StockTables";
-import Prediction from "./Predection";
->>>>>>> 5935e48fdd88add57940a3e11c98b1807133cf28
 import Vendors from './Vendors';
 import MyNav from './MyNav';
 
