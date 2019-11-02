@@ -1,23 +1,57 @@
 .ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #2984bd;
 }
 
 .list-item {
-  float: left;
+	float: left;
 }
 .list-anchor {
-  font-size:20px;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 22px 10px;
-  text-decoration: none;
+	font-size: 20px;
+	display: block;
+	color: #9e9f98;
+	text-align: left;
+	padding: 22px 10px;
+	text-decoration: none;
 }
 
 .list-anchor:hover {
-  background-color: #111;
+	background-color: #2984bd;
+	color: #fff;
+}
+
+.menuListItem {
+	background-color: #202d32;
+	color: #9e9f98;
+	width: 250px;
+}
+
+.menuListItemHeader {
+	background-color: #182226;
+	color: #9e9f98;
+	width: 250px;
+	font-size: 16px;
+	display: block;
+	text-align: left;
+	padding: 18px 10px;
+}
+
+.menuListItemBrand {
+	background-color: #2984bd;
+	color: #fff;
+	width: 250px;
+	font-size: 20px;
+	display: block;
+	text-align: left;
+	padding: 22px 10px;
+}
+
+.menuIcon {
+	width: 35px;
+	height: 5px;
+	background-color: #2984bd;
+	margin: 6px 0;
 }

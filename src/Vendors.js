@@ -153,9 +153,7 @@ export default class Vendors extends React.Component {
                         Expiry Date
                       </span>
                     </th>
-                    <th className="vendorTableHeading">
-                      <span className="vendorTableHeadingText">Discount</span>
-                    </th>
+                   
                     <th className="vendorTableHeading">
                       <span className="vendorTableHeadingText">Cost</span>
                     </th>
@@ -202,11 +200,7 @@ export default class Vendors extends React.Component {
                             {item.expirydate}
                           </span>
                         </td>
-                        <td className="vendorTableCol">
-                          <span className="vendorTableColText">
-                            {item.discount}
-                          </span>
-                        </td>
+                        
                         <td className="vendorTableCol">
                           <span className="vendorTableColText">
                             {item.cost}
