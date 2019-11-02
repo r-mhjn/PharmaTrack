@@ -174,7 +174,7 @@ export default class Vendors extends React.Component {
                     </th>
                   </tr>
                   {this.state.vendor.map((item, index) => {
-                    let maxQty = item.stock;
+                    // let maxQty = item.stock;
                     return (
                       <tr key={index} className="vendorTableRow">
                         <td className="vendorTableCol">
