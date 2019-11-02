@@ -250,12 +250,16 @@ export default class BillBox extends React.Component {
 	deleteAllBillItems = () => {
 		console.log('heymax');
 		this.setState({ items: [] });
+		this.setState({ totalcost: "" });
 		this.setState({ visible: false });
 	};
 
 	deleteItem = () => {
 		console.log('heysup');
-		let items = this.state.items;
+    let items = this.state.items;
+    let price  = items[this.state.index];
+    let totalcost = this.state.totalcost;
+    
 		items.splice(this.state.index, 1);
 		this.setState({ items });
 		this.setState({ visible2: false });

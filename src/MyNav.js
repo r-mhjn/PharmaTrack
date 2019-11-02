@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Sidebar from 'react-sidebar';
-import menubutton from '../src/images/menubutton.svg';
 
 export default class MyNav extends React.Component {
 	constructor(props) {
@@ -24,10 +23,9 @@ export default class MyNav extends React.Component {
 						<ul className="ul">
 							<li className="menuListItemBrand">PharmaTrack</li>
 							<li className="menuListItemHeader">Main Navigation</li>
-
 							<li className="menuListItem">
 								<Link to="/" className="list-anchor">
-									PharmaTrack
+									Dashboard
 								</Link>
 							</li>
 
@@ -57,9 +55,16 @@ export default class MyNav extends React.Component {
 					onSetOpen={this.onSetSidebarOpen}
 					styles={{ sidebar: { background: '#202d32' } }}
 				>
-					<button onClick={() => this.onSetSidebarOpen(true)}>
-						
-					</button>
+					<div>
+						<div onClick={() => this.onSetSidebarOpen(true)} className="menuButton">
+							<div className="menuIcon"></div>
+							<div className="menuIcon"></div>
+							<div className="menuIcon"></div>
+						</div>
+						<div>
+							<span className="header">PharmaTrack</span>
+						</div>
+					</div>
 				</Sidebar>
 				<ul className="ul">
 					<li className="list-item">
