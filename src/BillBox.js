@@ -3,8 +3,7 @@ import { Button } from 'primereact/button';
 import { Dropdown } from 'primereact/dropdown';
 import AlertBox from './AlertBox';
 import { Dialog } from 'primereact/dialog';
-
-import Axios from 'axios';
+import Axios from './axiosConfig';
 
 const medicines = [];
 
@@ -16,6 +15,7 @@ export default class BillBox extends React.Component {
 			custPhoneNumber: '',
 			customerName: '',
 			doctorName: '',
+
 			quantity: '',
 			price: '',
 			discount: '',
@@ -109,9 +109,9 @@ export default class BillBox extends React.Component {
 	}
 
 	getMedicines = async () => {
-		await Axios.get('http://csichitkara.club/createmedicine')
+		await Axios.get('/admin/medicine')
 			.then(res => {
-				console.log(res.data);
+				// console.log(res.data);
 				this.addMedsToArray(res.data);
 			})
 			.catch(err => {
@@ -122,56 +122,31 @@ export default class BillBox extends React.Component {
 	addMedsToArray = data => {
 		for (let i = 0; i < data.length; i++) {
 			let med = {
-				label: data[i].mname,
-				value: data[i].mname,
+				label: data[i].name,
+				value: data[i].name,
 				remainingQty: data[i].minstock,
 			};
 			medicines.push(med);
 		}
-		console.log(medicines);
+		// console.log(medicines);
 	};
 
 	makePayment = async () => {
 		if (this.state.custPhoneNumber === '' || this.state.customerName === '' || this.state.doctorName === '') {
 			this.onClick4();
 		} else {
-			let medicines = '',
-				qty = '',
-				price = '',
-				discount = '',
-				total = '';
-
-			for (let i = 0; i < this.state.items.length; i++) {
-				medicines += this.state.items[i].medicine;
-				qty += this.state.items[i].quantity;
-				price += this.state.items[i].price;
-				discount += this.state.items[i].discount;
-				total += this.state.items[i].total;
-
-				if (i !== this.state.items.length - 1) {
-					medicines += '|';
-					qty += '|';
-					price += '|';
-					discount += '|';
-					total += '|';
-				}
-			}
-
-			await Axios.post('http://csichitkara.club/createnewbill', {
-				dname: this.state.doctorName,
-				cname: this.state.customerName,
-				cphone: this.state.custPhoneNumber,
-				medicines: medicines,
-				qty: qty,
-				price: price,
-				discount: discount,
+			await Axios.post('/admin/medicine/purchase', {
+				docname: this.state.doctorName,
+				custname: this.state.customerName,
+				contact: this.state.custPhoneNumber,
 				tax: '18',
-				total: total,
+				// total: total,
+				items: this.state.items,
 				totalcost: this.state.totalcost,
 				date: new Date(),
 			})
 				.then(res => {
-					console.log(res);
+					//   console.log(res);
 					if (res.data === 'Not Enough Stock') {
 						this.onClick5();
 					} else {
@@ -220,7 +195,7 @@ export default class BillBox extends React.Component {
 			totalcost += '';
 			this.setState({ totalcost });
 			let newMed = {
-				medicine: this.state.medicine2,
+				name: this.state.medicine2,
 				quantity: this.state.quantity,
 				price: this.state.price,
 				discount: this.state.discount,
@@ -228,7 +203,7 @@ export default class BillBox extends React.Component {
 				total: total,
 			};
 			this.setState({ items: [...this.state.items, newMed] });
-			console.log(this.state.items);
+			//   console.log(this.state.items);
 		}
 	};
 
@@ -248,18 +223,14 @@ export default class BillBox extends React.Component {
 	};
 
 	deleteAllBillItems = () => {
-		console.log('heymax');
+		// console.log("heymax");
 		this.setState({ items: [] });
-		this.setState({ totalcost: "" });
 		this.setState({ visible: false });
 	};
 
 	deleteItem = () => {
-		console.log('heysup');
-    let items = this.state.items;
-    let price  = items[this.state.index];
-    let totalcost = this.state.totalcost;
-    
+		// console.log("heysup");
+		let items = this.state.items;
 		items.splice(this.state.index, 1);
 		this.setState({ items });
 		this.setState({ visible2: false });
@@ -477,8 +448,8 @@ export default class BillBox extends React.Component {
 												required
 												onChange={e =>
 													this.setState(
-														{ quantity: e.target.value },
-														console.log(e.target.value)
+														{ quantity: e.target.value }
+														// console.log(e.target.value)
 													)
 												}
 											/>

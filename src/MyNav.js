@@ -21,7 +21,7 @@ export default class MyNav extends React.Component {
 				<Sidebar
 					sidebar={
 						<ul className="ul">
-							<li className="menuListItemBrand">PharmaTrack</li>
+							<li className="menuListItemBrandBar">PharmaTrack</li>
 							<li className="menuListItemHeader">Main Navigation</li>
 							<li className="menuListItem">
 								<Link to="/" className="list-anchor">
@@ -49,6 +49,16 @@ export default class MyNav extends React.Component {
 									Vendors
 								</Link>
 							</li>
+							<li className="menuListItem">
+								<Link to="/salesreport" className="list-anchor">
+									Sales Report
+								</Link>
+							</li>
+							<li className="menuListItem">
+								<Link to="/futurepredictions" className="list-anchor">
+									FuturePredictions
+								</Link>
+							</li>
 						</ul>
 					}
 					open={this.state.sidebarOpen}
@@ -61,9 +71,7 @@ export default class MyNav extends React.Component {
 							<div className="menuIcon"></div>
 							<div className="menuIcon"></div>
 						</div>
-						<div>
-							<span className="header">PharmaTrack</span>
-						</div>
+						<div></div>
 					</div>
 				</Sidebar>
 				<ul className="ul">
